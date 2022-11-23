@@ -17,8 +17,17 @@ ap.add_argument("-o", "--output", type=str, required=True,
                 help="path to the output image")
 ap.add_argument("-c", "--crop", type=int, default=0,
 	help="whether to crop out largest rectangular region")
+
+ap.add_argument("-n", "--n_frames", type=int, default=0,
+	help="number of frames after which you want to stich")
+
 args = vars(ap.parse_args())
 
+
+n_frames=args["n_frames"]
+
+print(n_frames)
+sys.exit("Age less than 18")   
 # grab the paths to the input images and initialize our images list
 print("[INFO] loading images...")
 imagePaths = sorted(list(paths.list_images(args["images"])))
